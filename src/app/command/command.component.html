@@ -1,0 +1,63 @@
+<ul class="list-group">
+  <li *ngFor="let material of theListofMaterials" class="list-group-item d-flex justify-content-between align-items-center">
+    <span class="badge badge-primary badge-pill">14</span>
+  </li>
+</ul>
+<ul class="list-group">
+  <li *ngFor="let list of theListofMaterials" class="list-group-item tt">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{list.Path}}" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{list.Title}}</h5>
+            <p class="card-text">{{list.Description}}</p>
+            <p class="card-text"><small class="text-muted">{{list.Details}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- Trigger/Open The Modal -->
+<button (click)="btnonclick()" id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Buy</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span class="close" (click)="spanonclick()" aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #sendForm="ngForm" >
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Recipient:</label>
+              <input value="Aziz Art" type="text" class="form-control" id="recipient-name" readonly>
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Message:</label>
+              <textarea class="form-control" id="message-text">
+                {{theListofMaterials}}, <br>
+              </textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="send(sendForm)" type="button" class="btn btn-primary">Send !</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

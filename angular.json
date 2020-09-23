@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PnCS"
+    }
+  },
+  "defaultProject": "PnCS",
+  "cli": {
+    "analytics": false
+  }
 }

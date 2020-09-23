@@ -1,0 +1,8 @@
+input.ng-invalid.ng-touched{
+  border: 1px red bold;
+}
+
+.fix-rounded-right {
+  border-top-right-radius: .2rem !important;
+  border-bottom-right-radius: .2rem !important;
+}
