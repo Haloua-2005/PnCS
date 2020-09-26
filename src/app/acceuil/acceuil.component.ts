@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-acceuil',
@@ -6,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./acceuil.component.css']
 })
 export class AcceuilComponent implements OnInit {
+  FirstCarousel = ["","",""]
+  SecondCarousel = ["","",""]
+  ThirdCarousel = ["","",""]
+  FourthCarousel = ["","",""]
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
+
+  goToLink(link){
+    this.router.navigate(link)
+  }
 
   ngOnInit(): void {
   }
