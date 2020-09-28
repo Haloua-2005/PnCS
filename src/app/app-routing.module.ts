@@ -14,7 +14,6 @@ import { LogInGuard } from './Guards/log-in.guard';
 
 
 const routes: Routes = [
-  { path : '', redirectTo : 'home', pathMatch:'full' },
   { path : 'home', component:AcceuilComponent },
   { path : 'BA', component:BeauxArtsComponent, children:[
     { path : 'acrylic', component:AcrylicsComponent },
@@ -22,10 +21,11 @@ const routes: Routes = [
     { path : 'toile', component:ToilesComponent },
   ]},
   { path : 'GA', component:GraphicArtComponent, children:[] },
-  { path : 'login', component:LogInComponent, canActivate:[LogoutGuard], children:[
+  { path : 'login', component:LogInComponent, canActivate:[LogInGuard], children:[
     { path : 'signin', component:SignInComponent }
   ]},
-  { path : 'buy', component:CommandComponent, canActivate:[LogInGuard] }
+  { path : 'buy', component:CommandComponent, canActivate:[LogoutGuard] },
+  { path : '', redirectTo : 'home', pathMatch:'full' }
 ];
 
 @NgModule({

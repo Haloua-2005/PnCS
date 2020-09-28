@@ -9,6 +9,7 @@ export class SignInService {
   problemBool = false
 
   SignIn(credentials) {
+    console.log(credentials)
     return this.http.post<any>(LINK, credentials)
   }
 

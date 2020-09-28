@@ -1,16 +1,21 @@
-<div *ngFor="let list of Acrylics; let i = index">
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <img src="{{list.Path}}" alt="Avatar" style="width:300px;height:300px;">
+<div class="row_auto">
+  <div class="col-md-auto">
+    <div *ngFor="let list of Acrylics; let i = index">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="{{list.Path}}" alt="Avatar" style="width:300x;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>{{list.Title}}</h1> <br>
+            <p>{{list.Description}}</p>
+            <p>{{list.Details}}</p> <br>
+            <button (click)="ClickToAdd(Acrylics[i])" class="btn btn-secondary">Add to basket</button>
+          </div>
+        </div>
       </div>
-      <div class="flip-card-back">
-        <h1>{{list.Title}}</h1> <br>
-        <p>{{list.Description}}</p>
-        <p>{{list.Details}}</p> <br>
-        <small>{{list.Mark}}</small>
-        <button (click)="ClickToAdd(Acrylics[i])" class="btn btn-secondary">Add to basket</button>
-      </div>
+      <br>
+      <hr>
     </div>
   </div>
 </div>

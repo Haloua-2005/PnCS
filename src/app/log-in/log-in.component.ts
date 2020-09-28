@@ -23,7 +23,7 @@ export class LogInComponent implements OnInit {
       (data) => {
         localStorage.setItem('token', data.id)
         this.router.navigate(['home'])
-        alert("Successfuly Loged ! " + data.username)
+        alert("Successfuly Loged ! " )
       },
       (error) => {
         console.log(error)

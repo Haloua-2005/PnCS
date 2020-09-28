@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { Produit } from '../Product';
+import { Produit } from '../Produitss';
 
 const P_LINK=''
 const G_LINK=''

@@ -16,8 +16,9 @@ export class HeaderComponent implements OnInit {
 
   isAuth:boolean = this.auth.isAuthenticated()
 
-  goBA(){
-    this.router.navigate(['BA'])
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['home'])
   }
 
   ngOnInit(): void {

@@ -1,9 +1,10 @@
 export class Produit {
-  public Title:string
-  public Description:string
-  public Details:string
-  public Mark:string
-  public Path:string
+  Title:string
+  Description:string
+  Details:string
+  Mark:string
+  Path:string
+
   constructor(
     title:string,
     description:string,
@@ -11,7 +12,7 @@ export class Produit {
     mark:string,
     path:string
   ){
-    this.Title = title
+    this.Title= title
     this.Description = description
     this.Details = details
     this.Mark = mark

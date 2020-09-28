@@ -1,10 +1,10 @@
 <ul class="list-group">
-  <li *ngFor="let material of theListofMaterials" class="list-group-item d-flex justify-content-between align-items-center">
-    <span class="badge badge-primary badge-pill">14</span>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <span class="badge badge-primary badge-pill">{{numberProduct}}</span>
   </li>
 </ul>
 <ul class="list-group">
-  <li *ngFor="let list of theListofMaterials" class="list-group-item tt">
+  <li *ngFor="let list of theListofMaterials; let i=index" class="list-group-item tt">
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row no-gutters">
         <div class="col-md-4">
@@ -14,7 +14,17 @@
           <div class="card-body">
             <h5 class="card-title">{{list.Title}}</h5>
             <p class="card-text">{{list.Description}}</p>
-            <p class="card-text"><small class="text-muted">{{list.Details}}</small></p>
+            <div class="row">
+              <div class="col-md-6"><p class="card-text"><small class="text-muted">{{list.Details}}</small></p></div>
+                <div class="col-md-6"><div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Quantity</span>
+                  </div>
+                  <input type="number" class="form-control" value="1" min="1" aria-describedby="inputGroup-sizing-sm">
+                </div>
+              </div>
+            </div>
+            <button (click)="remove(i)" type="button" class="btn btn-outline-danger">Remove</button>
           </div>
         </div>
       </div>
@@ -23,7 +33,7 @@
 </ul>
 
 <!-- Trigger/Open The Modal -->
-<button (click)="btnonclick()" id="myBtn">Open Modal</button>
+<button (click)="btnonclick()" class="btn btn-primary" id="myBtn">Command</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">

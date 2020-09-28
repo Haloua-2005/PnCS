@@ -4,24 +4,31 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Beaux-Art
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="#">Acrylics</a>
-      <a class="dropdown-item" href="#">Huile</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Aquarelles</a>
-    </div>
-      <li *ngIf="!isAuth" class="nav-item">
-        <a class="nav-link" href="#" [routerLink]="['login']">LogIn</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a [routerLink]="['home']" class="nav-link" href="#">Home</a>
       </li>
-      <li *ngIf="isAuth" class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">LogOut</a>
+      <li class="nav-item">
+        <a [routerLink]="['BA']" class="nav-link" href="#">Beaux-Art</a>
       </li>
+      <li class="nav-item">
+        <a *ngIf="!isAuth" [routerLink]="['login']" class="nav-link" href="#">LogIn</a>
+      </li>
+      <li class="nav-item">
+        <a *ngIf="isAuth" (click)="logout()" class="nav-link" href="#">LogOut</a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="['buy']" class="nav-link" href="#" tabindex="-1" >
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-basket-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+  </div>
 </nav>
